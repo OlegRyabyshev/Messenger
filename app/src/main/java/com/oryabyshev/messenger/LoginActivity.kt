@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.os.PersistableBundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : AppCompatActivity() {
@@ -17,6 +18,11 @@ class LoginActivity : AppCompatActivity() {
             val password = text_password_login.text.toString()
 
             Log.d("MainActivity", "Email: $email, Password: $password")
+
+            FirebaseAuth.getInstance().signInWithEmailAndPassword(email, password)
+                .addOnCompleteListener {
+
+                }
         }
 
         return_to_registration.setOnClickListener {

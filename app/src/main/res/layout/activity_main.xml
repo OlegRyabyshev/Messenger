@@ -4,38 +4,64 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFE173"
+    android:background="@color/purple_200"
+    tools:ignore="ExtraText">
     tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/button_select_photo"
+        android:background="@mipmap/ic_launcher_round"
+        android:scaleType="centerCrop"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/set_photo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="@string/select_photo"
+        android:textColor="@color/design_default_color_on_primary"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/button_register"
+        app:layout_constraintStart_toStartOf="@+id/button_register"
+        app:layout_constraintTop_toBottomOf="@+id/button_select_photo" />
 
     <EditText
         android:id="@+id/text_name_registration"
         style="@style/Login.Theme.View"
         android:hint="@string/name"
+        android:layout_marginTop="30dp"
         android:inputType="textPersonName"
-        tools:ignore="Autofill"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/set_photo"
+        tools:ignore="Autofill" />
 
     <EditText
         android:id="@+id/text_email_registration"
         style="@style/Login.Theme.View"
         android:hint="@string/email"
         android:inputType="textEmailAddress"
-        tools:ignore="Autofill"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_name_registration" />
+        app:layout_constraintTop_toBottomOf="@+id/text_name_registration"
+        tools:ignore="Autofill" />
 
     <EditText
         android:id="@+id/text_password_registration"
         style="@style/Login.Theme.View"
         android:hint="@string/password"
         android:inputType="textPassword"
-        tools:ignore="Autofill"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_email_registration" />
+        app:layout_constraintTop_toBottomOf="@+id/text_email_registration"
+        tools:ignore="Autofill" />
 
     <Button
         android:id="@+id/button_register"
@@ -51,9 +77,10 @@
         android:layout_height="wrap_content"
         android:layout_margin="15dp"
         android:text="@string/already_have_an_account"
-        android:textColor="@color/design_default_color_on_secondary"
+        android:textColor="@color/design_default_color_on_primary"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="@+id/button_register"
         app:layout_constraintStart_toStartOf="@+id/button_register"
         app:layout_constraintTop_toBottomOf="@+id/button_register" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
