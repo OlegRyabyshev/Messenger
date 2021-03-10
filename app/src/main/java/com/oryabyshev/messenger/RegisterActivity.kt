@@ -61,7 +61,7 @@ class RegisterActivity : AppCompatActivity() {
             bitmap = ThumbnailUtils.extractThumbnail(bitmap, dimension, dimension);
 
             val drawable: RoundedBitmapDrawable =
-            RoundedBitmapDrawableFactory.create(resources, bitmap)
+                RoundedBitmapDrawableFactory.create(resources, bitmap)
             drawable.isCircular = true
 
             button_select_photo.background = drawable

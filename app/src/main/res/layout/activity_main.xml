@@ -10,7 +10,7 @@
 
     <ImageView
         android:id="@+id/button_select_photo"
-        android:background="@drawable/avatar"
+        android:background="@drawable/avatar_circle"
         android:scaleType="centerCrop"
         android:layout_width="150dp"
         android:layout_height="150dp"
