@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1022934314134",
+    "project_id": "kotlinmessenger-e68c8",
+    "storage_bucket": "kotlinmessenger-e68c8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1022934314134:android:134b6a37d891ebdd9026b7",
+        "android_client_info": {
+          "package_name": "com.oryabyshev.messenger"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1022934314134-4nagihcc6ju8mpun2n5t6rjps2p75bhe.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAJNgsdyHB54O40HB3orUz9rZn5SXbNDf4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1022934314134-4nagihcc6ju8mpun2n5t6rjps2p75bhe.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

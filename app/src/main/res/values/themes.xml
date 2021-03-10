@@ -13,4 +13,25 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="Login.Theme.View" parent="@android:style/Widget.Material.EditText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:layout_margin">10dp</item>
+        <item name="android:background">@color/design_default_color_on_primary</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/design_default_color_on_secondary</item>
+        <item name="android:textColorHint">@color/design_default_color_on_secondary</item>
+        <item name="android:paddingLeft">20dp</item>
+    </style>
+
+    <style name="Login.Theme.Button" parent="@android:style/Widget.Material.Button">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:layout_margin">10dp</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/design_default_color_on_primary</item>
+        <item name="android:textColorHint">@color/design_default_color_on_secondary</item>
+        <item name="android:paddingLeft">20dp</item>
+    </style>
 </resources>

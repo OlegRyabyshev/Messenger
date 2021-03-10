@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Мессенджер</string>
+
+    <string name="name">Имя</string>
+    <string name="email">Почта</string>
+    <string name="password">Пароль</string>
+
+    <string name="login">Войти</string>
+    <string name="register">Регистрация</string>
+
+    <string name="already_have_an_account">Уже есть аккаунт?</string>
+    <string name="return_back_to_registration">Вернуться к регистрации</string>
+
+    <string name="error_in_views">Введите корректную инфромацию</string>
+</resources>

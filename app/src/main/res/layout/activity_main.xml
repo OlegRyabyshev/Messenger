@@ -9,55 +9,51 @@
 
     <EditText
         android:id="@+id/text_name_registration"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_margin="10dp"
-        android:background="@color/design_default_color_on_primary"
-        android:ems="10"
-        android:hint="Name"
+        style="@style/Login.Theme.View"
+        android:hint="@string/name"
         android:inputType="textPersonName"
-        android:paddingLeft="20dp"
-        android:textColor="@color/design_default_color_on_secondary"
-        android:textColorHint="@color/design_default_color_on_secondary"
+        tools:ignore="Autofill"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/text_email_registration"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_margin="10dp"
-        android:background="@color/design_default_color_on_primary"
-        android:ems="10"
-        android:hint="Email"
+        style="@style/Login.Theme.View"
+        android:hint="@string/email"
         android:inputType="textEmailAddress"
-        android:paddingLeft="20dp"
-        android:textColor="@color/design_default_color_on_secondary"
-        android:textColorHint="@color/design_default_color_on_secondary"
+        tools:ignore="Autofill"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_name_registration" />
 
     <EditText
         android:id="@+id/text_password_registration"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_margin="10dp"
-        android:background="@color/design_default_color_on_primary"
-        android:ems="10"
-        android:hint="Password"
+        style="@style/Login.Theme.View"
+        android:hint="@string/password"
         android:inputType="textPassword"
-        android:paddingLeft="20dp"
-        android:textColor="@color/design_default_color_on_secondary"
-        android:textColorHint="@color/design_default_color_on_secondary"
+        tools:ignore="Autofill"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_email_registration" />
 
     <Button
         android:id="@+id/button_register"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_margin="10dp"
-        android:text="Register"
+        style="@style/Login.Theme.Button"
+        android:text="@string/register"
         app:layout_constraintEnd_toEndOf="@+id/text_password_registration"
         app:layout_constraintStart_toStartOf="@+id/text_password_registration"
         app:layout_constraintTop_toBottomOf="@+id/text_password_registration" />
+
+    <TextView
+        android:id="@+id/text_already_have_an_account"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:text="@string/already_have_an_account"
+        android:textColor="@color/design_default_color_on_secondary"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="@+id/button_register"
+        app:layout_constraintStart_toStartOf="@+id/button_register"
+        app:layout_constraintTop_toBottomOf="@+id/button_register" />
 </androidx.constraintlayout.widget.ConstraintLayout>
