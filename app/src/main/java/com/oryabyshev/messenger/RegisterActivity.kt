@@ -3,12 +3,15 @@ package com.oryabyshev.messenger
 import android.app.Activity
 import android.content.Intent
 import android.graphics.drawable.BitmapDrawable
+import android.media.ThumbnailUtils
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
 import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.graphics.drawable.RoundedBitmapDrawable
+import androidx.core.graphics.drawable.RoundedBitmapDrawableFactory
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.storage.FirebaseStorage
 import kotlinx.android.synthetic.main.activity_main.*
@@ -52,10 +55,16 @@ class RegisterActivity : AppCompatActivity() {
             Log.d(TAG, "Photo was selected")
             selectedPhotoURI = data?.data
 
-            val bitmap = MediaStore.Images.Media.getBitmap(contentResolver, selectedPhotoURI)
-            val bitmapDrawable = BitmapDrawable(bitmap)
-            button_select_photo.background = bitmapDrawable
+            var bitmap = MediaStore.Images.Media.getBitmap(contentResolver, selectedPhotoURI)
 
+            val dimension = bitmap.width.coerceAtMost(bitmap.height);
+            bitmap = ThumbnailUtils.extractThumbnail(bitmap, dimension, dimension);
+
+            val drawable: RoundedBitmapDrawable =
+            RoundedBitmapDrawableFactory.create(resources, bitmap)
+            drawable.isCircular = true
+
+            button_select_photo.background = drawable
         }
     }
 
@@ -92,4 +101,5 @@ class RegisterActivity : AppCompatActivity() {
                 Log.d(TAG, "Uploaded image")
             }
     }
+
 }
