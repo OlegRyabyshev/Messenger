@@ -2,7 +2,6 @@ package com.oryabyshev.messenger
 
 import android.app.Activity
 import android.content.Intent
-import android.graphics.drawable.BitmapDrawable
 import android.media.ThumbnailUtils
 import android.net.Uri
 import android.os.Bundle
@@ -13,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.graphics.drawable.RoundedBitmapDrawable
 import androidx.core.graphics.drawable.RoundedBitmapDrawableFactory
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
@@ -96,10 +96,30 @@ class RegisterActivity : AppCompatActivity() {
         if (selectedPhotoURI == null) return
         val filename = UUID.randomUUID().toString()
         val ref = FirebaseStorage.getInstance().getReference("/images/$filename")
+
         ref.putFile(selectedPhotoURI!!)
             .addOnSuccessListener {
                 Log.d(TAG, "Uploaded image")
+
+                ref.downloadUrl.addOnSuccessListener {
+                    Log.d(TAG, "File location: $it")
+
+                    saveUserToFirebadDB(it.toString())
+                }
             }
     }
 
+    private fun saveUserToFirebadDB(profileImageUrl: String) {
+        val uid: String? = FirebaseAuth.getInstance().uid ?: ""
+        val ref = FirebaseDatabase.getInstance().getReference("/users/$uid")
+
+        val user = User(uid, text_name_registration.text.toString(), profileImageUrl)
+
+        ref.setValue(user)
+            .addOnSuccessListener {
+                Log.d(TAG, "Saved user to DB")
+            }
+    }
 }
+
+class User(val uid: String?, val username: String, val profileImageUrl: String)
